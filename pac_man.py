@@ -68,7 +68,6 @@ def next_step(point, x, y, i, my_pac):
         my_pac[i]['save_point'] = point
         my_pac[i]['x_output'] = x
         my_pac[i]['y_output'] = y
-        print(my_pac[i]['pac_id'], i, point, x, y, file=sys.stderr)
 
 def algoritm(x, y, my_pac, i, new_row, count, height, width, point):
 
@@ -91,6 +90,7 @@ def algoritm(x, y, my_pac, i, new_row, count, height, width, point):
 # width: size of the grid
 # height: top left corner is (x=0, y=0)
 width, height = [int(i) for i in input().split()]
+print(width, height, file=sys.stderr)
 row = []
 for i in range(height):
     row.append(list(input()))  # one line of the grid: space " " is floor, pound "#" is wall
@@ -150,5 +150,4 @@ while True:
         if my_pac[i]['save_point'] == 0:
             my_pac[i]['x_output'] = my_pac[i]['x_output_standart']
             my_pac[i]['y_output'] = my_pac[i]['y_output_standart']
-
     f_print()
